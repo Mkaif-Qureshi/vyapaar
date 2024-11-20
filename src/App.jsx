@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import FeaturesSection from './components/FeaturesSection ';
+import Footer from './components/Footer ';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
+    <div className="flex flex-col min-h-screen bg-[#183473] text-white">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <FeaturesSection />
+      
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
