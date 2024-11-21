@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection ';
+import ExportProcess from './components/ExportProcess';
 import Footer from './components/Footer ';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
-      
+        <ExportProcess />
       </main>
       <Footer />
     </div>
