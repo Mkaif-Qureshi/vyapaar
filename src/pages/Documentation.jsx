@@ -11,7 +11,7 @@ const Documentation = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 p-5">
-      <div className="flex space-x-4 overflow-x-auto gap-x-6"> {/* Increased space between cards */}
+      <div className="flex space-x-4 gap-x-6"> {/* Removed overflow-x-auto class */}
         {cardData.map((card, index) => (
           <div
             key={index}
