@@ -8,6 +8,7 @@ import Footer from './components/Footer ';
 import Login from './pages/login';
 import Register from './pages/Register';
 import Documentation  from './pages/Documentation';
+import Quotation from './pages/Quotation'
 import InvoiceForm from './pages/Forms/InvoiceForm';
 import BillOfExchangeForm from './pages/Forms/BillOfExchangeForm';
 import QuoteForm from './pages/Forms/QuoteForm'
@@ -46,6 +47,8 @@ function App() {
           />
 
            <Route path='/documentation' element={<Documentation />} />
+
+          <Route path='/quotation' element={<Quotation />} /> 
            <Route path="/invoice-form" element={<InvoiceForm />} />
            <Route path="/bill-of-exchange" element={<BillOfExchangeForm />} />
            <Route path="/pro-forma-invoice" element={<QuoteForm />} />
