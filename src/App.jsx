@@ -8,6 +8,7 @@ import Footer from './components/Footer ';
 import Login from './pages/login';
 import Register from './pages/Register';
 import Documentation  from './pages/Documentation';
+import Quotation from './pages/Quotation'
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
           />
 
            <Route path='/documentation' element={<Documentation />} />
+
+          <Route path='/quotation' element={<Quotation />} /> 
         </Routes>
       </div>
     </Router>
