@@ -8,6 +8,9 @@ import Footer from './components/Footer ';
 import Login from './pages/login';
 import Register from './pages/Register';
 import Documentation  from './pages/Documentation';
+import InvoiceForm from './pages/Forms/InvoiceForm';
+import BillOfExchangeForm from './pages/Forms/BillOfExchangeForm';
+import QuoteForm from './pages/Forms/QuoteForm'
 
 function App() {
   return (
@@ -43,6 +46,11 @@ function App() {
           />
 
            <Route path='/documentation' element={<Documentation />} />
+           <Route path="/invoice-form" element={<InvoiceForm />} />
+           <Route path="/bill-of-exchange" element={<BillOfExchangeForm />} />
+           <Route path="/pro-forma-invoice" element={<QuoteForm />} />
+
+           
         </Routes>
       </div>
     </Router>
