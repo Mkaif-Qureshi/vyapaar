@@ -16,7 +16,6 @@
     "docx": "^9.0.3",
     "file-saver": "^2.0.5",
     "jspdf": "^2.5.2",
-    "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
     "lucide-react": "^0.460.0",
     "number-to-words": "^1.2.4",

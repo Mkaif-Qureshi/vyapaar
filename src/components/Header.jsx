@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="px-4 lg:px-6 h-16 flex items-center border-b border-[#2a4a8f]">
+    <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-[#183473] border-[#2a4a8f]">
       <Link className="flex items-center justify-center" to="/">
         <Globe2 className="h-6 w-6 text-white" />
         <span className="ml-2 text-lg font-bold text-white">Vyapaar</span>
@@ -29,18 +29,18 @@ const Header = () => {
         {isAuthenticated ? (
           <>
             {/* Show these links if the user is authenticated */}
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] transition-colors" to="/Documentation">
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/Documentation">
               Documentation
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] transition-colors" to="/services">
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
               Services
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] transition-colors" to="/about">
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/about">
               About
             </Link>
             <button
               onClick={handleLogout}
-              className="text-sm font-medium hover:text-[#a8c0ff] transition-colors"
+              className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors"
             >
               Logout
             </button>

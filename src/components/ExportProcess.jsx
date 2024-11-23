@@ -139,35 +139,38 @@ const ExportProcess = () => {
     ];
 
     return (
-        <section className="w-full md:py-12 lg:py-16 bg-[#f8f9fa]">
-            <div className="container px-4 md:px-6 text-gray-800">
-                <h2 className="text-center text-2xl font-bold md:text-4xl">Export Process Simplified</h2>
-                <p className="text-center text-gray-600 max-w-[800px] mx-auto my-4">
-                    Navigate through the key steps to export your products seamlessly.
-                </p>
-                <div className="flex overflow-x-auto space-x-4 py-1 px-4 scrollbar-hide">
-                    {steps.map((step, index) => (
-                        <div
-                            key={index}
-                            className="flex-shrink-0 w-[350px] bg-white rounded-lg shadow-md p-6 border border-gray-200 text-center"
-                        >
-                            <div className="flex items-center justify-center w-16 h-16 mx-auto bg-[#F0F4FF] text-[#0f2557] rounded-full">
-                                {step.icon}
-                            </div>
-                            <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-                            <p className="text-gray-600 mt-2">{step.description}</p>
-                            <details className="mt-4 group">
-                                <summary className="cursor-pointer text-sm text-gray-600 flex items-center justify-center space-x-1">
-                                    <span>More Info</span>
-                                    <ChevronDown size={16} />
-                                </summary>
-                                <p className="text-sm text-gray-500 mt-2 group-open:mt-4">{step.details}</p>
-                            </details>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <section className="w-full py-12 md:py-16 lg:py-24 bg-[#f8f9fa]">
+  <div className="container px-4 md:px-6 mx-auto text-gray-800">
+    <h2 className="text-center text-2xl font-bold md:text-4xl text-[#0f2557]">
+      Export Process Simplified
+    </h2>
+    <p className="text-center text-gray-600 max-w-[800px] mx-auto my-4">
+      Navigate through the key steps to export your products seamlessly.
+    </p>
+    <div className="flex overflow-x-auto space-x-4 py-1 px-4 scrollbar-hide">
+      {steps.map((step, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 w-[350px] bg-white rounded-lg shadow-md p-6 border border-gray-200 text-center"
+        >
+          <div className="flex items-center justify-center w-16 h-16 mx-auto bg-[#F0F4FF] text-[#0f2557] rounded-full">
+            {step.icon}
+          </div>
+          <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+          <p className="text-gray-600 mt-2">{step.description}</p>
+          <details className="mt-4 group">
+            <summary className="cursor-pointer text-sm text-gray-600 flex items-center justify-center space-x-1">
+              <span>More Info</span>
+              <ChevronDown size={16} />
+            </summary>
+            <p className="text-sm text-gray-500 mt-2 group-open:mt-4">{step.details}</p>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
     );
 };
 
