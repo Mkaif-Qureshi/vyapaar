@@ -10,8 +10,3 @@
   display: none; /* Chrome, Safari, and Opera */
 }
 
-::selection{
-  color: white;
-  background-color: black;
-  opacity: 0.5;
-}

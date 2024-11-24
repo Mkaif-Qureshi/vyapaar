@@ -213,7 +213,8 @@ const Quotation = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white text-black p-6">
+        <div className="min-h-screen bg-white text-black p-6 border-4 border-black rounded-lg shadow-lg">
+   
             <h1 className="text-2xl font-bold mb-6">Quotation Form</h1>
             <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
 
