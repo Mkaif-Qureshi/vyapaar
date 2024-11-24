@@ -35,9 +35,9 @@ const Header = () => {
             <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/chat">
               Chat with us 
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
+            {/* <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
               Services
-            </Link>
+            </Link> */}
             <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/faqs">
             FAQs
             </Link>
