@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-[#183473] border-[#2a4a8f]">
+    <header className="px-4 fixed w-full lg:px-6 h-16 flex items-center border-b bg-[#183473] border-[#2a4a8f]">
       <Link className="flex items-center justify-center" to="/">
         <Globe2 className="h-6 w-6 text-white" />
         <span className="ml-2 text-lg font-bold text-white">Vyapaar</span>
@@ -35,9 +35,9 @@ const Header = () => {
             <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/chat">
               Chat with us 
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
+            {/* <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
               Services
-            </Link>
+            </Link> */}
             <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/faqs">
             FAQs
             </Link>
@@ -52,10 +52,10 @@ const Header = () => {
         ) : (
           <>
             {/* Show Login and Register links if not authenticated */}
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] transition-colors" to="/login">
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/login">
               Login
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] transition-colors" to="/register">
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/register">
               Register
             </Link>
           </>
