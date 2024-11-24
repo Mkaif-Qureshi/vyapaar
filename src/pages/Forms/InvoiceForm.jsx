@@ -233,6 +233,8 @@ const InvoiceForm = () => {
                 rows="3"
                 placeholder="Terms of Delivery"
               />
+              <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-green-200 dark:focus:ring-green-400 font-medium rounded-lg text-sm px-2.5 py-1.5 text-center me-2 mb-2 ml-64">Generate ✨ </button>
+
             </div>
           </div>
 

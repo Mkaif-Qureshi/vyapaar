@@ -12,6 +12,7 @@ import Quotation from './pages/Forms/Quotation';
 import InvoiceForm from './pages/Forms/InvoiceForm';
 import BillOfExchangeForm from './pages/Forms/BillOfExchangeForm';
 import QuoteForm from './pages/Forms/QuoteForm';
+import Chat from './pages/Chat'
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/invoice-form" element={<InvoiceForm />} />
           <Route path="/bill-of-exchange" element={<BillOfExchangeForm />} />
           <Route path="/pro-forma-invoice" element={<QuoteForm />} />
+          <Route path="/chat" element={<Chat/>} />
+
         </Route>
 
         {/* Routes without Layout */}
