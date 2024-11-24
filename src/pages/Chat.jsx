@@ -82,23 +82,30 @@ const Chatbot = () => {
       <div className="flex-1 flex flex-col bg-white">
         {/* Chat Messages */}
         <div className="flex-1 p-4 overflow-y-auto">
-          {messages.map((msg, i) => (
-            <div
-              key={i}
-              className={`my-2 p-3 rounded-md max-w-[75%] ${
-                msg.sender === 'user'
-                  ? 'ml-auto bg-[#183473] text-white'
-                  : 'mr-auto bg-[#f0f4ff] text-[#183473]'
-              }`}
-            >
-              {msg.text}
-            </div>
-          ))}
-        </div>
+    {messages.map((msg, i) => (
+      <div
+        key={i}
+        className={`my-2 flex ${
+          msg.sender === 'user' ? 'justify-end' : 'justify-start'
+        }`}
+      >
+        <span
+          className={`inline-block p-3 rounded-md ${
+            msg.sender === 'user'
+              ? 'bg-[#183473] text-white'
+              : 'bg-[#f0f4ff] text-[#183473]'
+          }`}
+          style={{ maxWidth: '75%' }}
+        >
+          {msg.text}
+        </span>
+      </div>
+    ))}
+  </div>
 
         {/* Chat Input */}
-        <div className="flex items-center justify-center py-4 border-t bg-[#f8f9fa]">
-          <div className="flex items-center w-[50%] bg-white rounded-md border">
+        <div className="flex items-center justify-center py-4 border-t bg-[#eff0f1]">
+          <div className="flex items-center w-[50%] bg-white rounded-md border-2 border-black ">
             <input
               type="text"
               placeholder="Type your message..."
