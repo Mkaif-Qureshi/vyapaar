@@ -74,7 +74,7 @@ const BillOfExchangeForm = () => {
   
 
   return (
-    <div className="p-6 bg-[#e0e2e6] min-h-screen">
+    <div className="p-6 pt-20 bg-[#e0e2e6] min-h-screen">
       <div
         className="max-w-2xl mx-auto bg-white border border-[#183473] relative"
         style={{ fontFamily: "Arial, sans-serif", fontSize: "14px" }}

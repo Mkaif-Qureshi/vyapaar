@@ -108,14 +108,17 @@ const removeProductRow = (index) => {
 };
 
   return (
-    <div className="invoice-container" style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#fff", padding: "20px" }}>
-      <div ref={formRef} className="invoice-form" style={{ maxWidth: "900px", margin: "auto", padding: "20px" }}>
+    
+
+    
+    <div className=" invoice-container" style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#fff", padding: "20px" }}>
+      <div ref={formRef} className="invoice-form" style={{ maxWidth: "900px", margin: "auto", padding: "50px" }}>
         <h1 className="invoice-title" style={{ textAlign: "center", fontWeight: "bold", fontSize: "36px", color: "#00AEE6" }}>
           PRO FORMA INVOICE
         </h1>
 
         {/* Company Information */}
-        <section style={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}>
+        <section  style={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}>
           <div style={{ width: "48%" }}>
             <h3 style={{ color: "white", backgroundColor: "#183473",padding:"3px" }}>Company Information</h3>
             <div className="form-row">
@@ -579,6 +582,7 @@ const removeProductRow = (index) => {
         </div>
       </div>
     </div>
+    
   );
 }
 

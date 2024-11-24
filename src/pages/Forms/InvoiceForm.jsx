@@ -126,7 +126,7 @@ const InvoiceForm = () => {
   
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 pt-20 bg-gray-100 min-h-screen">
       <div className="bg-white shadow-md rounded p-6 max-w-5xl mx-auto">
         <h1 className="text-xl font-bold mb-4 text-center text-black">
           Invoice Cum Packing List
