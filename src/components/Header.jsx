@@ -38,9 +38,10 @@ const Header = () => {
             <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/services">
               Services
             </Link>
-            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/about">
-              About
+            <Link className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors" to="/faqs">
+            FAQs
             </Link>
+
             <button
               onClick={handleLogout}
               className="text-sm font-medium hover:text-[#a8c0ff] text-white transition-colors"

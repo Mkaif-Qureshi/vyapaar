@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "accordion": "^3.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "docx": "^9.0.3",
     "file-saver": "^2.0.5",
+    "framer-motion": "^11.11.17",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
     "lucide-react": "^0.460.0",
