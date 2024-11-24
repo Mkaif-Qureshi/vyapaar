@@ -29,6 +29,6 @@
    npm install
    ```
 6. Run the app
- ```bash
-   npm run dev
- ```
+    ```bash
+      npm run dev
+    ```
