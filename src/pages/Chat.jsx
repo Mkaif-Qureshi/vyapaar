@@ -1,46 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
+import ReactMarkdown from 'react-markdown';
+import axios from 'axios';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
 
-  // Load chat history from localStorage when the component mounts
   useEffect(() => {
     const savedHistory = localStorage.getItem('chatHistory');
     if (savedHistory) {
-      setHistory(JSON.parse(savedHistory)); // Load chat history from localStorage
+      setHistory(JSON.parse(savedHistory));
     }
   }, []);
 
-  // Save chat history to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('chatHistory', JSON.stringify(history));
   }, [history]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const timestamp = new Date().toISOString();
     const userMessage = { text: input, sender: 'user', timestamp };
-    const botResponse = { text: 'Response from backend...', sender: 'bot', timestamp };
 
-    const updatedMessages = [...messages, userMessage, botResponse];
-    setMessages(updatedMessages);
+    setMessages((prev) => [...prev, userMessage]);
+
+    try {
+      const response = await axios.post('http://localhost:8000/chatbot/chatbot', {
+        query: input,
+      });
+
+      const botResponse = {
+        text: response.data.response,
+        sender: 'bot',
+        timestamp: new Date().toISOString(),
+      };
+      setMessages((prev) => [...prev, botResponse]);
+    } catch (error) {
+      console.error('Error communicating with backend:', error);
+      const errorMessage = {
+        text: 'Something went wrong. Please try again.',
+        sender: 'bot',
+        timestamp: new Date().toISOString(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    }
+
     setInput('');
   };
 
   const saveCurrentChat = () => {
     if (messages.length === 0) return;
-
-    // Save the current conversation as a new session in history
     const newHistory = [
       ...history,
       { id: history.length + 1, messages, createdAt: new Date().toISOString() },
     ];
     setHistory(newHistory);
-    setMessages([]); // Clear current chat messages
+    setMessages([]);
   };
 
   const formatDate = (timestamp) => {
@@ -56,11 +74,10 @@ const Chatbot = () => {
 
   return (
     <div className="h-[87vh] flex">
-      {/* Sidebar */}
       <div className="w-1/4 bg-[#183473] text-white p-4 space-y-6 overflow-y-auto">
         <h2 className="text-lg font-bold">Chat History</h2>
         <button
-          onClick={saveCurrentChat} // Save the current chat as a new session
+          onClick={saveCurrentChat}
           className="w-full py-2 bg-white text-[#183473] rounded hover:bg-gray-200"
         >
           + New Chat
@@ -70,7 +87,7 @@ const Chatbot = () => {
             <button
               key={index}
               className="block w-full text-left p-2 mt-1 bg-[#f0f4ff] text-[#183473] rounded hover:bg-[#e0efff]"
-              onClick={() => setMessages(session.messages)} // Load selected conversation
+              onClick={() => setMessages(session.messages)}
             >
               Chat {session.id} - {formatDate(session.createdAt)}
             </button>
@@ -78,34 +95,29 @@ const Chatbot = () => {
         </div>
       </div>
 
-      {/* Chat Area */}
       <div className="flex-1 flex flex-col bg-white">
-        {/* Chat Messages */}
         <div className="flex-1 p-4 overflow-y-auto">
-    {messages.map((msg, i) => (
-      <div
-        key={i}
-        className={`my-2 flex ${
-          msg.sender === 'user' ? 'justify-end' : 'justify-start'
-        }`}
-      >
-        <span
-          className={`inline-block p-3 rounded-md ${
-            msg.sender === 'user'
-              ? 'bg-[#183473] text-white'
-              : 'bg-[#f0f4ff] text-[#183473]'
-          }`}
-          style={{ maxWidth: '75%' }}
-        >
-          {msg.text}
-        </span>
-      </div>
-    ))}
-  </div>
+          {messages.map((msg, i) => (
+            <div
+              key={i}
+              className={`my-2 flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+            >
+              <span
+                className={`inline-block p-3 rounded-md ${msg.sender === 'user' ? 'bg-[#183473] text-white' : 'bg-[#f0f4ff] text-[#183473]'}`}
+                style={{ maxWidth: '75%' }}
+              >
+                {msg.sender === 'bot' ? (
+                  <ReactMarkdown className="chat-markdown">{msg.text}</ReactMarkdown>
+                ) : (
+                  msg.text
+                )}
+              </span>
+            </div>
+          ))}
+        </div>
 
-        {/* Chat Input */}
         <div className="flex items-center justify-center py-4 border-t bg-[#eff0f1]">
-          <div className="flex items-center w-[50%] bg-white rounded-md border-2 border-black ">
+          <div className="flex items-center w-[50%] bg-white rounded-md border-2 border-black">
             <input
               type="text"
               placeholder="Type your message..."
