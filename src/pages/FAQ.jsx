@@ -29,7 +29,7 @@ const faqData = [
     answer: "RoSCTL scheme has been notified by the Ministry of Textiles. However,the scheme shall be implemented by the Department of Revenue",
     category: "Incentives"
   },
- 
+
   {
     question: "What is a RoSCTL Scheme?",
     answer: "  The RoSCTL Scheme (Rebate of State and Central Taxes and Levies on Export of Garments and Made-ups) replaces the RoSL Scheme to provide rebates on embedded State and Central taxes for garments and made-ups. It aims to enhance the competitiveness of these sectors by offering benefits for apparel (Chapters 61 and 62) and made-ups (Chapter 63), excluding RoDTEP benefits. The scheme was introduced through a Ministry of Textiles notification on March 8, 2019.",
@@ -126,7 +126,7 @@ const faqData = [
     answer: "The Scheme provides that the rebate under RoSCTL would not bedependent on the realization of export proceeds at the time of claim ofrebate. However, the rebate is allowed subject to receipt of sale proceedswithin the period allowed under the Foreign Exchange Management Act, 1999failing which such rebate shall never be deemed to have been allowed and theduty credit scrip issued shall be deemed to be ineligible",
     category: "Incentives"
   },
- 
+
   {
     question: "How do I handle VAT when exporting to the EU?",
     answer: "When exporting to the EU, goods are generally zero-rated for VAT in the country of export. However, import VAT and possibly customs duties will be charged when the goods enter the EU. The importer is typically responsible for paying these charges. If you're selling B2C, you may need to register for VAT in the destination country under certain conditions.",
@@ -165,12 +165,12 @@ const faqData = [
   },
   {
     question: "Products exported by India to Eu",
-    answer:"India's top exports to the European Union (EU) include textiles and apparel, chemicals (such as pharmaceuticals and agrochemicals), engineering goods (machinery and electrical equipment), agricultural products (like spices, tea, and coffee), and gems and jewelry. The EU is India's second-largest trading partner, with significant exports coming from these diverse sectors.",
+    answer: "India's top exports to the European Union (EU) include textiles and apparel, chemicals (such as pharmaceuticals and agrochemicals), engineering goods (machinery and electrical equipment), agricultural products (like spices, tea, and coffee), and gems and jewelry. The EU is India's second-largest trading partner, with significant exports coming from these diverse sectors.",
     category: "EU"
   },
   {
     question: "What benefits does the European Union offer to Indian exporters to facilitate trade?",
-    answer:"The European Union (EU) offers several benefits to Indian exporters, including preferential tariffs under the Generalized System of Preferences (GSP), access to a large consumer market, and trade facilitation through agreements that reduce barriers. Indian businesses also gain from clear regulations and standards for market entry, particularly in sectors like food, pharmaceuticals, and textiles. Additionally, platforms like Access2Markets provide valuable information to help exporters navigate EU tariffs and regulations, fostering smoother trade relations.",
+    answer: "The European Union (EU) offers several benefits to Indian exporters, including preferential tariffs under the Generalized System of Preferences (GSP), access to a large consumer market, and trade facilitation through agreements that reduce barriers. Indian businesses also gain from clear regulations and standards for market entry, particularly in sectors like food, pharmaceuticals, and textiles. Additionally, platforms like Access2Markets provide valuable information to help exporters navigate EU tariffs and regulations, fostering smoother trade relations.",
     category: "EU"
   },
 
@@ -192,7 +192,7 @@ const FAQ = () => {
   }, [searchTerm, selectedCategory]);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl h-[100%]">
+    <div className="container mx-auto px-4 pt-32 py-8 max-w-4xl h-[100%]">  {/* Increased pt-32 to avoid overlap with navbar */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -203,15 +203,14 @@ const FAQ = () => {
       </motion.h1>
 
       <div className="mb-8 flex flex-col sm:flex-row gap-4">
-        <div className="relative flex-grow">
+        <div className="flex-grow">
           <Input
             type="text"
             placeholder="Search FAQs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
+            className="pl-4"
           />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
         </div>
         <div className="flex gap-2">
           {["All", "USA", "EU", "Incentives"].map((category) => (
@@ -219,7 +218,7 @@ const FAQ = () => {
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 border-blue-900"
             >
               {category === "All" && <Globe size={16} />}
               {category}
@@ -238,14 +237,13 @@ const FAQ = () => {
             <Accordion type="single" collapsible className="w-full space-y-4">
               {filteredFAQs.map((faq, index) => (
                 <AccordionItem value={`item-${index}`} key={index} className="border rounded-lg overflow-hidden shadow-lg">
-                <AccordionTrigger className="w-full px-4 py-2 text-left hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-                  <span>{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 py-2 bg-gray-100">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-              
+                  <AccordionTrigger className="w-full px-4 py-2 text-left hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                    <span>{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 py-2 bg-gray-100">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
             </Accordion>
           </motion.div>
@@ -262,6 +260,7 @@ const FAQ = () => {
       </AnimatePresence>
     </div>
   );
+
 };
 
 export default FAQ;
