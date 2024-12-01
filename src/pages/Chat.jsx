@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 import { Comment } from 'react-loader-spinner';
 import axios from 'axios';
 import remarkGfm from 'remark-gfm'; // Import the plugin for GFM support
-import "./chat.css"
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
