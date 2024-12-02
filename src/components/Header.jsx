@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo  from "../assets/logo.svg";
+import Logo from "../assets/logo.svg";
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -26,23 +26,23 @@ const Header = () => {
   };
 
   return (
-    <header className="px-4 fixed w-full lg:px-6 h-16 flex items-center border-b bg-[#183473] border-[#2a4a8f] z-50">
-     <Link className="flex items-center" to="/">
-        <div className="logo-container flex items-center space-x-2 bg-transparent"> {/* Ensure the container has a transparent background */}
-          <img
-            width={40}
-            height={40}
-            src={Logo}
-            alt="logo"
-            className="bg-transparent"  // Apply transparent background to the image itself (though this may be redundant)
-            curve-radius="50%"
-          />
-          <span className="text-lg font-bold text-white">Vyapaar</span>
-        </div>
+    <header className="px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-[#183473] border-[#2a4a8f] z-50 fixed w-full">
+      {/* Logo Section */}
+      <Link className="flex items-center space-x-2" to="/">
+        <img
+          width={40}
+          height={40}
+          src={Logo}
+          alt="logo"
+          className="rounded-full"
+        />
+        <span className="text-lg font-bold text-white hidden sm:block">
+          Vyapaar
+        </span>
       </Link>
 
-
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      {/* Navigation */}
+      <nav className="flex items-center space-x-4 sm:space-x-6">
         {isAuthenticated ? (
           <>
             <Link
