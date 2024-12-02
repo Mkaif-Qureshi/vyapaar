@@ -8,7 +8,6 @@ import Login from './pages/login';
 import Register from './pages/Register';
 import Documentation from './pages/Documentation';
 import Quotation from './pages/Forms/Quotation';
-import QuotationForm from './pages/Forms/QuotationForm';
 import InvoiceForm from './pages/Forms/InvoiceForm';
 import BillOfExchangeForm from './pages/Forms/BillOfExchangeForm';
 import QuoteForm from './pages/Forms/QuoteForm';
@@ -34,7 +33,6 @@ function App() {
           <Route path="/documentation" element={<Documentation />} />s
           <Route path="/faqs" element={<FAQ />} />
           <Route path="/quotation" element={<Quotation />} />
-          <Route path="/QuotationForm" element={<QuotationForm />} />
 
           <Route path="/invoice-form" element={<InvoiceForm />} />
           <Route path="/bill-of-exchange" element={<BillOfExchangeForm />} />
