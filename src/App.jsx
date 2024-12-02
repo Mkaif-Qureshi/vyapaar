@@ -33,11 +33,12 @@ function App() {
           <Route path="/documentation" element={<Documentation />} />s
           <Route path="/faqs" element={<FAQ />} />
           <Route path="/quotation" element={<Quotation />} />
+
           <Route path="/invoice-form" element={<InvoiceForm />} />
           <Route path="/bill-of-exchange" element={<BillOfExchangeForm />} />
           <Route path="/pro-forma-invoice" element={<QuoteForm />} />
-          
-          <Route path="/chat" element={<Chat/>} />
+
+          <Route path="/chat" element={<Chat />} />
 
         </Route>
 
