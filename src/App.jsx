@@ -13,6 +13,7 @@ import BillOfExchangeForm from './pages/Forms/BillOfExchangeForm';
 import QuoteForm from './pages/Forms/QuoteForm';
 import FAQ from './pages/FAQ';
 import Chat from './pages/Chat'
+import Processflow from './components/Processflow';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <HeroSection />
                 <FeaturesSection />
                 <ExportProcess />
+                <Processflow />
               </main>
             }
           />

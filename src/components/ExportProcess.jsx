@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'react-feather'; // Icons
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { FaPiggyBank, FaShippingFast } from "react-icons/fa";
+import { BiWorld } from "react-icons/bi";
+import { AiOutlineSafety } from "react-icons/ai";
+import { MdOutlineHowToReg } from "react-icons/md";
+import { GiReceiveMoney } from "react-icons/gi";
 
 const ExportProcess = () => {
     const [openIndex, setOpenIndex] = useState(null); // State to track which dropdown is open
@@ -7,7 +13,7 @@ const ExportProcess = () => {
         {
             title: "Register Your Company",
             description: "Establish your business entity with the necessary registrations.",
-            icon: <img src='src/assets/icons/office-building.png' alt='import-export' style={{height:'32px'}} />,
+            icon: <HiOutlineOfficeBuilding size={32} />,
             details: (
                 <>
                     Choose an appropriate business structure like Sole Proprietorship, LLP, or Private Limited, and register with the MCA.
@@ -27,53 +33,7 @@ const ExportProcess = () => {
         {
             title: "Open a Current Bank Account",
             description: "Open an authorized dealer bank account for foreign transactions.",
-            icon: (
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                    height="32"
-                    width="32"
-                    id="Bank--Streamline-Kameleon"
-                >
-                    <desc>Bank Streamline Icon: https://streamlinehq.com</desc>
-                    <path
-                        fill="#deeeff"
-                        d="M23.9979 47.9997c13.2548 0 23.9999 -10.745 23.9999 -23.9998C47.9978 10.7451 37.2527 0 23.9979 0S-0.00195312 10.7451 -0.00195312 23.9999 10.7431 47.9997 23.9979 47.9997Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#2e3ecd"
-                        d="M37.9613 20.5087v1.7455H10.0342v-1.7455l13.9635 -8.7272 13.9636 8.7272Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#2e3ecd"
-                        d="M11.7803 36.2179v-1.7455h24.4362v1.7455H11.7803Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#6bafff"
-                        d="M18.3255 22.2544h-4.3636v12.2181h4.3636V22.2544Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#6bafff"
-                        d="M26.18 22.2544h-4.3636v12.2181H26.18V22.2544Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#6bafff"
-                        d="M34.0345 22.2544h-4.3636v12.2181h4.3636V22.2544Z"
-                        stroke-width="1"
-                    ></path>
-                    <path
-                        fill="#2e3ecd"
-                        d="M37.9613 36.2178H10.0342v1.7454h27.9271v-1.7454Z"
-                        stroke-width="1"
-                    ></path>
-                </svg>
-            ),
+            icon: <FaPiggyBank size={32} />,
             details: (
                 <>
                     Open an account with a bank that handles foreign exchange and provides export services.
@@ -92,7 +52,7 @@ const ExportProcess = () => {
         {
             title: "Obtain Importer-Exporter Code (IEC)",
             description: "Apply for IEC to start exporting legally.",
-            icon: <img src='src/assets/icons/import.png' alt='import-export' style={{height:'32px'}} />,
+            icon: <BiWorld size={32} />,
             details: (
                 <>
                     IEC is mandatory for exporting goods and is issued by the Directorate General of Foreign Trade (DGFT).
@@ -111,7 +71,7 @@ const ExportProcess = () => {
         {
             title: "Verify Buyers & Secure Credit Insurance",
             description: "Conduct due diligence on buyers and secure insurance to mitigate risks.",
-            icon: <img src='src/assets/icons/verified.png' alt='verify' style={{height:'32px'}} />,
+            icon: <AiOutlineSafety size={32} />,
             details: (
                 <>
                     Use ECGC or private insurance providers to safeguard against buyer defaults. Learn more at
@@ -129,7 +89,7 @@ const ExportProcess = () => {
         {
             title: "Register with Export Promotion Council",
             description: "Gain benefits and support by registering under the relevant EPC.",
-            icon: <img src='src/assets/icons/registered.png' alt='document' style={{height:'32px'}} />,
+            icon: <MdOutlineHowToReg size={32} />,
             details: (
                 <>
                     Identify the EPC for your product category to access financial incentives and networking opportunities.
@@ -149,7 +109,7 @@ const ExportProcess = () => {
         {
             title: "Comply with GST & Other Taxes",
             description: "Ensure GST registration and proper tax compliance.",
-            icon: <img src='src/assets/icons/document.png' alt='document' style={{height:'32px'}} />,
+            icon: <GiReceiveMoney size={32} />,
             details: (
                 <>
                     GST compliance is essential for claiming input tax credits and smooth transactions. Refer to
@@ -167,7 +127,7 @@ const ExportProcess = () => {
         {
             title: "Plan Logistics & Documentation",
             description: "Choose the best shipping mode and prepare export documents.",
-            icon: <img src='src/assets/icons/delivery-truck.png' alt='document' style={{height:'32px'}} />,
+            icon: <FaShippingFast size={32} />,
             details: (
                 <>
                     Work with reliable freight forwarders and prepare accurate shipping and customs documents. Check out
